@@ -13,7 +13,6 @@ if (Meteor.is_client) {
 	});
 
 	Template.billBoard.rendered = function() {
-
 	}
 
 }

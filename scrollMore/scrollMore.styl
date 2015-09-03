@@ -1,15 +1,18 @@
 $color = white
 .scrollMore
-	margin auto
+	position absolute
+	bottom 30px
+	margin-left -30px
+	left: 50%
 	.scrollButton
 		cursor pointer
 		display flex
 		border-radius 100%
 		border 4px solid $color
-		height: 60px
-		width: 60px
+		height 60px
+		width 60px
 		&:active
-			transform: translateY(2px)
+			transform translateY(2px)
 		i
 			font-size 45px
 			color $color

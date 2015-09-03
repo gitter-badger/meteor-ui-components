@@ -18,9 +18,28 @@ Package.onUse(function(api) {
   api.use('mquandalle:stylus@1.1.1');
   api.use('fortawesome:fontawesome@4.4.0');
   var clientFiles = [
+
+    'normalize.styl',
+
+    'icon/icon.jade',
+    'icon/icon.js',
+    'icon/icon.styl',
+
+    'bottomNav/bottomNav.jade',
+    'bottomNav/bottomNav.js',
+    'bottomNav/bottomNav.styl',
+
+    'contactNoForm/contactNoForm.jade',
+    'contactNoForm/contactNoForm.js',
+    'contactNoForm/contactNoForm.styl',
+
     'billBoard/billBoard.jade',
     'billBoard/billBoard.js',
     'billBoard/billBoard.styl',
+
+    'teamBoard/teamBoard.jade',
+    'teamBoard/teamBoard.js',
+    'teamBoard/teamBoard.styl',
 
     'button/button.jade',
     'button/button.js',
@@ -34,13 +53,31 @@ Package.onUse(function(api) {
     'scrollMore/scrollMore.js',
     'scrollMore/scrollMore.styl',
 
+    'securedSSL/securedSSL.jade',
+    'securedSSL/securedSSL.js',
+    'securedSSL/securedSSL.styl',
+
+    'seoFooter/seoFooter.jade',
+    'seoFooter/seoFooter.js',
+    'seoFooter/seoFooter.styl',
+
+    'socialMedia/socialMedia.jade',
+    'socialMedia/socialMedia.js',
+    'socialMedia/socialMedia.styl',
+
     'teamPortrait/teamPortrait.jade',
     'teamPortrait/teamPortrait.js',
     'teamPortrait/teamPortrait.styl',
 
     'videoEmbed/videoEmbed.jade',
     'videoEmbed/videoEmbed.js',
-    'videoEmbed/videoEmbed.styl'
+    'videoEmbed/videoEmbed.styl',
+
+    'copyright/copyright.jade',
+    'copyright/copyright.js',
+    'copyright/copyright.styl',
+
+    'skins/mercury.styl'
 
   ]
   api.addFiles(clientFiles, 'client');

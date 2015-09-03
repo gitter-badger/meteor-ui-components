@@ -1,6 +1,6 @@
 template(name="teamPortrait")
-  .teamPortrait
-    img(src="{{ imageUrl }}")
+  .teamPortrait.text-center(class="{{ class }}")
+    img(src="{{ image }}")
     .name {{ name }}
     .position {{ position }}
     a.linkedin(href="http://linkedin.com/{{ linkedin }}")
