@@ -1,12 +1,12 @@
 template(name="billBoard")
   .billBoard(class="{{ class}}")
     if bgImage
-      img.bgImage(src="http://buildaship.s3.amazonaws.com/{{ bgImage }}")
+      img.bgImage(src="{{ bgImage }}")
     .content.s-grid-column
       if aboveFold
         +scrollMore
       if title
         .info
           h1.s-grid-cell-bottom {{ title }}
-          h3 {{ subtitle }}
+          h3 {{ subTitle }}
       +UI.contentBlock

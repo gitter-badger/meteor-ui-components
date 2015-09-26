@@ -4,9 +4,10 @@ template(name="socialMedia")
       h1 Let's be friends
     .s-grid-cell-sm-12
       p We're on all your favorite social networks.  Come say hello!
-    .s-grid-cell-sm-4
-      +icon(face="facebook")
-    .s-grid-cell-sm-4
-      +icon(face="twitter")
-    .s-grid-cell-sm-4
-      +icon(face="instagram")
+    .iconGroup
+      a(href="http://facebook.com/{{ facebookURL }}")
+        +icon(face="facebook")
+      a(href="http://twitter.com/{{ twitterURL }}")
+        +icon(face="twitter")
+      a(href="http://instagram.com/{{ instagramURL }}")
+        +icon(face="instagram")

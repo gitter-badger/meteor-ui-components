@@ -16,71 +16,58 @@ Package.onUse(function(api) {
   api.use('templating');
   api.use('mquandalle:jade@0.4.3');
   api.use('mquandalle:stylus@1.1.1');
+  api.use('mrgalaxy:stripe@2.1.0');
   api.use('fortawesome:fontawesome@4.4.0');
-  var clientFiles = [
+  var componentNames = [
+    'billBoard'
+    , 'bottomNav'
+    , 'button'
+    , 'callToAction'
+    , 'copyright'
+    , 'contactForm'
+    , 'contactNoForm'
+    , 'icon'
+    , 'iconGroup'
+    , 'joinForm'
+    , 'loginForm'
+    , 'loginJoinForm'
+    , 'screenShot'
+    , 'scrollMore'
+    , 'securedSSL'
+    , 'seoFooter'
+    , 'socialMedia'
+    , 'stripePopup'
+    , 'teamBoard'
+    , 'teamPortrait'
+    , 'mailingListForm'
+    , 'menuWDetails'
+    , 'modalDialog'
+    , 'videoEmbed'
+  ];
 
-    'normalize.styl',
+  var clientFiles = [];
 
-    'icon/icon.jade',
-    'icon/icon.js',
-    'icon/icon.styl',
+  var addtlFiles = [
+    'normalize.styl'
+    , 'skins/mercury.styl'
+  ];
 
-    'bottomNav/bottomNav.jade',
-    'bottomNav/bottomNav.js',
-    'bottomNav/bottomNav.styl',
+  clientFiles = clientFiles.concat(addtlFiles);
+  var extensions = [
+    'jade',
+    'styl',
+    'js'
+  ];
+  for (name in componentNames) {
+    var componentFiles = [];
+    for (ext in extensions) {
+      componentFiles.push(componentNames[name] + '/' + componentNames[name] + '.' + extensions[ext]);
+    }
+    clientFiles = clientFiles.concat(componentFiles);
+  }
 
-    'contactNoForm/contactNoForm.jade',
-    'contactNoForm/contactNoForm.js',
-    'contactNoForm/contactNoForm.styl',
-
-    'billBoard/billBoard.jade',
-    'billBoard/billBoard.js',
-    'billBoard/billBoard.styl',
-
-    'teamBoard/teamBoard.jade',
-    'teamBoard/teamBoard.js',
-    'teamBoard/teamBoard.styl',
-
-    'button/button.jade',
-    'button/button.js',
-    'button/button.styl',
-
-    'screenShot/screenShot.jade',
-    'screenShot/screenShot.js',
-    'screenShot/screenShot.styl',
-
-    'scrollMore/scrollMore.jade',
-    'scrollMore/scrollMore.js',
-    'scrollMore/scrollMore.styl',
-
-    'securedSSL/securedSSL.jade',
-    'securedSSL/securedSSL.js',
-    'securedSSL/securedSSL.styl',
-
-    'seoFooter/seoFooter.jade',
-    'seoFooter/seoFooter.js',
-    'seoFooter/seoFooter.styl',
-
-    'socialMedia/socialMedia.jade',
-    'socialMedia/socialMedia.js',
-    'socialMedia/socialMedia.styl',
-
-    'teamPortrait/teamPortrait.jade',
-    'teamPortrait/teamPortrait.js',
-    'teamPortrait/teamPortrait.styl',
-
-    'videoEmbed/videoEmbed.jade',
-    'videoEmbed/videoEmbed.js',
-    'videoEmbed/videoEmbed.styl',
-
-    'copyright/copyright.jade',
-    'copyright/copyright.js',
-    'copyright/copyright.styl',
-
-    'skins/mercury.styl'
-
-  ]
   api.addFiles(clientFiles, 'client');
+
 });
 
 Package.onTest(function(api) {

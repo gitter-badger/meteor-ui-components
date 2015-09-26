@@ -1,6 +1,4 @@
 template(name="teamPortrait")
-  .teamPortrait.text-center(class="{{ class }}")
+  .teamPortrait.text-center.paddingV(class="{{ class }}")
     img(src="{{ image }}")
-    .name {{ name }}
-    .position {{ position }}
-    a.linkedin(href="http://linkedin.com/{{ linkedin }}")
+    +UI.contentBlock

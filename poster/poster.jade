@@ -1,3 +1,5 @@
 template(name="poster")
   .poster
-
+    if url
+      img(src="{{ url }}")
+    +UI.contentBlock  

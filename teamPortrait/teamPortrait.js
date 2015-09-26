@@ -1,4 +1,4 @@
-if (Meteor.is_client) {
+if (Meteor.isClient) {
 
 	Template.teamPortrait.events({
 

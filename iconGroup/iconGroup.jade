@@ -1,0 +1,8 @@
+template(name="iconGroup")
+  .iconGroup
+    a(href="tel:{{ phone }}")
+      +icon(face="phone")
+    a(href="mailto:{{ email }}")
+      +icon(face="envelope")
+    a(href="{{ forumUrl }}")
+      +icon(face="commenting-o")

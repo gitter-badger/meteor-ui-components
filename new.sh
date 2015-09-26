@@ -1,14 +1,19 @@
 #!/bin/sh
 
-dir='.'
-mkdir $dir/$1
-touch $dir/$1/$1.jade
-touch $dir/$1/$1.styl
-touch $dir/$1/$1.js
+case $1 in
+	"ui") dir='packages/meteor-ui-components';;
+	"page") dir="client/templates";;
+	"layout") dir="client/templates/layouts";;
+esac
 
-echo "if (Meteor.is_client) {
+mkdir $dir/$2
+touch $dir/$2/$2.jade
+touch $dir/$2/$2.styl
+touch $dir/$2/$2.js
 
-	Template.$1.events({
+echo "if (Meteor.isClient) {
+
+	Template.$2.events({
 
 		'' : function(e, t) {
 		}
@@ -16,23 +21,23 @@ echo "if (Meteor.is_client) {
 	});
 
 
-	Template.$1.helpers({
+	Template.$2.helpers({
 
 	});
 
-	Template.$1.rendered = function() {
+	Template.$2.rendered = function() {
 
 	}
 
-}" >> $dir/$1/$1.js
+}" >> $dir/$2/$2.js
 
 
-echo ".$1
-	display flex
-" >> $dir/$1/$1.styl
+echo ".$2
+	//
+" >> $dir/$2/$2.styl
 
-echo "template(name=\"$1\")
-  .$1
-" >> $dir/$1/$1.jade
+echo "template(name=\"$2\")
+  .$2
+" >> $dir/$2/$2.jade
 
-echo "Success! $1 component created."
+echo "\e[32m Success! A $2 $1 component was created."
